@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Student Enrollment System</h1>
+    </header>
+
+    <div class="main-container">
+        <section class="instructions-section">
+            <h3>Instructions</h3>
+            <ol>
+                <li>Complete all fields in the form below.</li>
+                <li>Select your areas of interest.</li>
+                <li>Click "Enroll Now" to submit your application.</li>
+            </ol>
+        </section>
+
+        <section class="form-section">
+            <h3>Enrollment Form</h3>
+            <form id="enrollment-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full_name" placeholder="John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="16" placeholder="Your age" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Sex</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sex" value="Male" required> Male</label>
+                        <label><input type="radio" name="sex" value="Female" required> Female</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select id="course" name="course" required onchange="updateInterests()">
+                        <option value="">-- Select a Course --</option>
+                        <option value="BSIT">BSIT</option>
+                        <option value="BSSW">BSSW</option>
+                        <option value="BSPA">BSPA</option>
+                        <option value="BSAIS">BSAIS</option>
+                        <option value="DHRS">DHRS</option>
+                        <option value="ABELS">ABELS</option>
+                        <option value="BSE">BSE</option>
+                        <option value="BSPA">BSSW</option>
+                        <option value="BTVTE">BTVTE</option>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label>Interests</label>
+                    <div id="interest-options" class="checkbox-group">
+                        <label><input type="checkbox" name="interests" value="Web Development"> Web Development</label>
+                        <label><input type="checkbox" name="interests" value="Data Science"> Data Science</label>
+                        <label><input type="checkbox" name="interests" value="Networking"> Networking</label>
+                        <label><input type="checkbox" name="interests" value="Graphic Design"> Graphic Design</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="submit-button" onclick="submitForm()">Enroll Now</button>
+                </div>
+            </form>
+        </section>
+
+
+        <section class="table-section">
+            <h3>Enrolled Students</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Sex</th>
+                        <th>Course</th>
+                        <th>Interests</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table">
+                    <tr>
+                        <td>1</td>
+                        <td>Jane Doe</td>
+                        <td>jane.doe@example.com</td>
+                        <td>20</td>
+                        <td>Female</td>
+                        <td>BSIT</td>
+                        <td>Web Development</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
